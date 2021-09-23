@@ -18,42 +18,6 @@
   grid-gap: 20px;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  background-color: #151515;
-  border-radius: 5px;
-  cursor: pointer;
-  -moz-osx-font-smoothing: grayscale;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  transition: transform 0.25s ease-out;
-  font-family: 'Oswald';
-  width: 1fr;
-  color: white;
-  font-family: 'medium';
-  text-align: center;
-  font-family: 'Merriweather Sans', sans-serif;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card_image {
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  width: auto;
-  height: 200px;
-  background-position: cover;
-  background-size: 100%;
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-}
-
 .movieSearch {
   height: 40px;
   margin: 10px 0;

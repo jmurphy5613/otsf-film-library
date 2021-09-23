@@ -1,31 +1,32 @@
 import './App.css';
 
+import LastFewWords from './images/ALastFewWords.png';
+import Greenlee from './images/Greenlee.png';
+import ComingClean from './images/ComingClean.png';
+
+import CardItem from './components/card-item/card-item.component';
+
 import { useState } from 'react';
 
 function App() {
 
   const [movies, setMovies] = useState([
-    {
-      title: 'The Doorstep',
-      imageLink: '',
-      year: '',
-      category: 'shorts',
-    },
+
     {
       title: 'A Last Few Words',
-      imageLink: '',
+      image: LastFewWords,
       year: 2020,
       category: 'drama',
     },
     {
       title: 'Greenlee',
-      imageLink: '',
+      image: Greenlee,
       year: 2021,
       category: 'drama',
     },
     {
       title: 'Coming Clean',
-      imageLink: '',
+      image: ComingClean,
       year: 2021,
       category: 'comedy',
     }
@@ -37,37 +38,8 @@ function App() {
     <div className="background">
       <input type="text" placeholder={"Search"} className="movieSearch" onChange={e => setSearchValue(e.target.value)} />
       <div className="grid">
-            <div className={"card"}>
-                <div className={"card_image"} style={{ backgroundImage: `url()` }}>
-                </div>
-                <div className={"card_content"}>
-                    <h3 className={"card_title"}>The Doorstep (2020)</h3>
-                </div>
-            </div>
-            <div className={"card"}>
-                <div className={"card_image"} style={{ backgroundImage: `url()` }}>
-                </div>
-                <div className={"card_content"}>
-                    <h3 className={"card_title"}>A Last Few Words (2020)</h3>
-                </div>
-            </div>
-            <div className={"card"}>
-                <div className={"card_image"} style={{ backgroundImage: `url()` }}>
-                </div>
-                <div className={"card_content"}>
-                    <h3 className={"card_title"}>Greenlee (2021)</h3>
-                    <br />
-                </div>
-            </div>
-            <div className={"card"}>
-                <div className={"card_image"} style={{ backgroundImage: `url()` }}>
-                </div>
-                <div className={"card_content"}>
-                    <h3 className={"card_title"}>Coming Clean (2021)</h3>
-                    <br />
-                </div>
-            </div>
-        </div>
+        {movies.filter(movie => movie.title.toLowerCase().includes(searchValue.toLowerCase())).map(movie => ( <CardItem name={`${movie.title} ${movie.year}`} image={movie.image}  category={movie.category} />))}
+      </div>
     </div>
   );
 }
