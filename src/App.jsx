@@ -464,6 +464,13 @@ function App() {
   return (
     <div className="background">
       <input type="text" placeholder={"Search"} className="movieSearch" onChange={e => setSearchValue(e.target.value)} />
+      <div class="select">
+        <select>
+          <option value="1">Category</option>
+          <option value="2">Drama</option>
+          <option value="3">Nice!</option>
+        </select>
+      </div>
       <div className="grid">
         {movies.filter(movie => movie.title.toLowerCase().includes(searchValue.toLowerCase())).map(movie => ( <CardItem name={`${movie.title} ${movie.year}`} image={movie.image}  category={movie.category} />))}
       </div>
