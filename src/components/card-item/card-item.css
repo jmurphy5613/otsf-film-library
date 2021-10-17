@@ -8,10 +8,8 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
-    font-family: 'Oswald';
     width: 1fr;
     color: white;
-    font-family: 'medium';
     text-align: center;
     font-family: 'Merriweather Sans', sans-serif;
   }
@@ -44,3 +42,8 @@
       top: 5px;
   }
   
+  a {
+    text-decoration: inherit;
+    color: inherit;
+    background: inherit;
+  }
