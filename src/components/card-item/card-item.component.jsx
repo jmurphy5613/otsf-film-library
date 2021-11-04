@@ -6,7 +6,7 @@ function CardItem(props) {
 
     if(props.font) {
         return(
-                <div className={"card"} style={{ cursor: 'pointer' }} onClick={window.location=props.link}>
+                <div className={"card"} style={{ cursor: 'pointer' }}>
                     <div className={"card_image"} style={{ backgroundImage: `url(${props.image})`, backgroundSize: `cover`, backgroundPosition: `center`, backgroundRepeat: `no-repeat` }}>
                     </div>
                     <div className={"card_content"}>
@@ -17,13 +17,15 @@ function CardItem(props) {
     }
 
     return(
-            <div className={"card"} style={{ cursor: 'pointer' }} onClick={window.location=`${props.link}`}>
+        <a href={props.link} target="_blank">
+                        <div className={"card"} style={{ cursor: 'pointer' }}>
             <div className={"card_image"} style={{ backgroundImage: `url(${props.image})`, backgroundSize: `cover`, backgroundPosition: `center`, backgroundRepeat: `no-repeat` }}>
             </div>
             <div className={"card_content"}>
                 <h3 className={"card_title"}>{props.name}</h3>
             </div>
             </div>
+        </a>
     )
 }
 
