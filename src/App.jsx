@@ -59,6 +59,7 @@ import LockedIn from './images/LockedIn.png';
 import TheRock from './images/TheRock.png';
 import BirdCage from './images/BirdCage.png';
 import Backpack from './images/Backpack.jpg';
+import DollyVEveHomecoming from './images/DollyVEveHomecoming.jpg';
 
 import CardItem from './components/card-item/card-item.component';
 
@@ -521,6 +522,8 @@ function App() {
       title: 'Dolly V Eve Homecoming',
       year: 2021,
       category: 'horror',
+      image: DollyVEveHomecoming,
+      link: "https://www.youtube.com/watch?v=W9XmuOFd0Bo"
     }
 
 
