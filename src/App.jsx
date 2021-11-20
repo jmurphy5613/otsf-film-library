@@ -517,6 +517,11 @@ function App() {
     //   category: 'horror',
     //   image
     // }
+    {
+      title: 'Dolly V Eve Homecoming',
+      year: 2021,
+      category: 'horror',
+    }
 
 
   ]);
