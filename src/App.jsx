@@ -63,9 +63,10 @@ import DollyVEveHomecoming from './images/DollyVEveHomecoming.jpg';
 
 import CardItem from './components/card-item/card-item.component';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+
 
   const [movies, setMovies] = useState([
 
@@ -525,16 +526,26 @@ function App() {
       image: DollyVEveHomecoming,
       link: "https://www.youtube.com/watch?v=W9XmuOFd0Bo"
     }
-
-
   ]);
+
+  const [allMovies, setAllMovies] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://ots-dashboard.herokuapp.com/movie/all-movies')
+    .then(res => {
+      setAllMovies(movies.concat(res.data));
+    })
+  }, []);
+
+
+
   //search values
   const [searchValue, setSearchValue] = useState('');
   const [year, setYear] = useState('');
   const [category, setCategory] = useState('');
 
   //filter mechanism
-  const filteredMovies = movies.filter(movie => {
+  const filteredMovies = allMovies.filter(movie => {
     if(year !=='' && category !== ''){
       return movie.year == year && movie.category === category && movie.title.toLowerCase().includes(searchValue.toLowerCase());
     }
