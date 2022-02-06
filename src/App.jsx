@@ -65,6 +65,8 @@ import CardItem from './components/card-item/card-item.component';
 
 import { useEffect, useState } from 'react';
 
+import axios from 'axios';
+
 function App() {
 
 
@@ -559,7 +561,7 @@ function App() {
       return movie.title.toLowerCase().includes(searchValue.toLowerCase());
     }
   });
-
+  console.log(allMovies);
   return (
     <div className="background">
       <div className="header">
@@ -593,7 +595,7 @@ function App() {
       </div>
       <div className="grid">
         {console.log(year, category)}
-        {filteredMovies.map(movie => ( <CardItem name={`${movie.title} ${movie.year}`} image={movie.image}  category={movie.category} font={movie.font} link={movie.link} />))}
+        {filteredMovies.map(movie => ( <CardItem name={`${movie.title} ${movie.year}`} image={movie.image}  category={movie.category} font={movie.font} link={movie.link} imagePath={movie.imagePath} />))}
       </div>
     </div>
   );
