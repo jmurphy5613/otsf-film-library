@@ -594,8 +594,7 @@ function App() {
         </div>
       </div>
       <div className="grid">
-        {console.log(year, category)}
-        {filteredMovies.map(movie => ( <CardItem name={`${movie.title} ${movie.year}`} image={movie.image}  category={movie.category} font={movie.font} link={movie.link} imagePath={movie.imagePath} />))}
+        {filteredMovies.map(movie => ( <CardItem name={`${movie.title} ${movie.year}`} image={movie.image}  category={movie.category} font={movie.font} link={movie.link} imagePath={movie.imagePath} videoEmbed={movie.videoEmbed} />))}
       </div>
     </div>
   );
